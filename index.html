@@ -159,26 +159,36 @@
           </div>
         </div>
 
-        <!-- Visual: T shape con colores de marca -->
+        <!-- Visual: T + iconos flotando -->
         <div class="flex justify-center">
-          <div class="relative">
-            <!-- T grande estilizada -->
-            <div class="t-logo-hero relative w-64 h-72">
+          <div class="relative w-72 h-80">
+
+            <!-- Iconos orbitando (fuera de la T) -->
+            <div class="float-icon float-icon-1 absolute -top-2 left-4 w-12 h-12 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl border border-gray-100">🎓</div>
+            <div class="float-icon float-icon-2 absolute top-8 -right-4 w-12 h-12 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl border border-gray-100">💡</div>
+            <div class="float-icon float-icon-3 absolute bottom-16 -left-6 w-12 h-12 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl border border-gray-100">🤝</div>
+            <div class="float-icon float-icon-4 absolute bottom-8 -right-2 w-12 h-12 rounded-2xl bg-white shadow-lg flex items-center justify-center text-2xl border border-gray-100">🌟</div>
+
+            <!-- T shape centrada (más grande) -->
+            <div class="absolute inset-x-8 top-6 bottom-4">
               <!-- Barra horizontal -->
-              <div class="absolute top-0 left-0 right-0 h-20 rounded-2xl bg-gradient-to-r from-brand-sky via-brand-purple to-brand-orange flex items-center justify-center gap-2 overflow-hidden">
-                <span class="text-white text-3xl">♿</span>
-                <span class="text-white text-3xl">👥</span>
-                <span class="text-white text-3xl">🌟</span>
+              <div class="absolute top-0 left-0 right-0 h-24 rounded-2xl bg-gradient-to-r from-brand-sky via-brand-purple to-brand-orange flex items-center justify-around px-4 overflow-hidden">
+                <span class="text-white text-3xl drop-shadow">♿</span>
+                <span class="text-white text-3xl drop-shadow">👥</span>
+                <span class="text-white text-3xl drop-shadow">📚</span>
               </div>
               <!-- Barra vertical -->
-              <div class="absolute top-20 left-1/2 -translate-x-1/2 w-24 bottom-0 rounded-b-2xl bg-gradient-to-b from-brand-orange via-brand-red to-brand-purple flex flex-col items-center justify-center gap-3">
-                <span class="text-white text-3xl">👩‍🏫</span>
-                <span class="text-white text-3xl">🤝</span>
+              <div class="absolute top-24 left-1/2 -translate-x-1/2 w-28 bottom-0 rounded-b-2xl bg-gradient-to-b from-brand-orange via-brand-red to-brand-purple flex flex-col items-center justify-center gap-4">
+                <span class="text-white text-3xl drop-shadow">👩‍🏫</span>
+                <span class="text-white text-3xl drop-shadow">🎯</span>
               </div>
             </div>
+
             <!-- Texto debajo -->
-            <p class="text-center font-heading font-black text-brand-dark text-2xl mt-4">Divergen-T</p>
-            <p class="text-center font-body text-gray-500 text-xs mt-1">Centro de Atención Integral al<br><strong>Desarrollo Educativo</strong></p>
+            <div class="absolute -bottom-8 inset-x-0 text-center">
+              <p class="font-heading font-black text-brand-dark text-2xl">Divergen-T</p>
+              <p class="font-body text-gray-400 text-xs mt-0.5">Centro de Atención Integral al <strong class="text-gray-600">Desarrollo Educativo</strong></p>
+            </div>
           </div>
         </div>
       </div>
@@ -186,164 +196,183 @@
   </section>
 
   <!-- ===== SERVICIOS ===== -->
-  <section id="servicios" class="py-24 bg-white">
+  <section id="servicios" class="py-24 bg-gray-50/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
       <div class="text-center mb-14">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-brand-orange/10 text-brand-orange text-sm font-body font-bold mb-4">Lo que ofrecemos</span>
         <h2 class="font-heading font-black text-3xl sm:text-4xl text-brand-dark mb-4">Nuestros Servicios</h2>
-        <p class="font-body text-gray-600 max-w-2xl mx-auto text-lg">
-          Ofrecemos atención especializada e integral para el desarrollo educativo,
-          adaptándonos a las necesidades únicas de cada persona.
+        <p class="font-body text-gray-500 max-w-2xl mx-auto">
+          Atención especializada e integral adaptada a las necesidades únicas de cada persona.
+          Pasa el cursor o toca una tarjeta para ver más detalles.
         </p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Card 1 -->
-        <div class="flip-card group" tabindex="0">
+        <div class="flip-card" tabindex="0">
           <div class="flip-card-inner">
-            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
               </div>
-              <div>
-                <h3 class="font-heading font-bold text-lg text-brand-dark">Tutorías Personalizadas</h3>
-                <p class="font-body text-sm text-gray-500 mt-1">Matemáticas, español, ciencias y más.</p>
+              <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Tutorías Personalizadas</h3>
+              <p class="font-body text-sm text-gray-500 mb-4">Matemáticas, español, ciencias y más a tu ritmo.</p>
+              <div class="flex gap-1 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-body font-bold">Matemáticas</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-body font-bold">Español</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-body font-bold">Ciencias</span>
               </div>
-              <p class="text-xs text-brand-orange font-body font-bold mt-auto">Toca para ver más →</p>
+              <p class="text-xs text-gray-400 font-body mt-4">Toca para ver más →</p>
             </div>
-            <div class="flip-card-back bg-brand-orange rounded-2xl p-6 flex flex-col gap-3">
-              <h3 class="font-heading font-bold text-lg text-white">Tutorías Personalizadas</h3>
-              <p class="font-body text-sm text-white/90">Atención individualizada en las materias que tu hijo necesite, adaptándonos a su ritmo y estilo de aprendizaje.</p>
-              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
-                <li>✓ Matemáticas y ciencias</li>
-                <li>✓ Español y lectura</li>
-                <li>✓ Club de tareas diarias</li>
+            <div class="flip-card-back bg-brand-orange rounded-2xl p-6">
+              <h3 class="font-heading font-bold text-lg text-white mb-3">Tutorías Personalizadas</h3>
+              <p class="font-body text-sm text-white/90 mb-4">Atención individualizada en las materias que tu hijo necesite, adaptándonos a su ritmo y estilo de aprendizaje.</p>
+              <ul class="font-body text-sm text-white/90 space-y-2">
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Matemáticas y ciencias</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Español y lectura</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Club de tareas diarias</li>
               </ul>
             </div>
           </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="flip-card group" tabindex="0">
+        <div class="flip-card" tabindex="0">
           <div class="flip-card-inner">
-            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-sky/10 flex items-center justify-center">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-brand-sky/10 flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-brand-sky" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
               </div>
-              <div>
-                <h3 class="font-heading font-bold text-lg text-brand-dark">Estimulación Temprana</h3>
-                <p class="font-body text-sm text-gray-500 mt-1">Desarrollo cognitivo y motor desde la infancia.</p>
+              <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Estimulación Temprana</h3>
+              <p class="font-body text-sm text-gray-500 mb-4">Desarrollo cognitivo y motor desde la infancia.</p>
+              <div class="flex gap-1 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-brand-sky/10 text-brand-sky text-xs font-body font-bold">Cognitivo</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-sky/10 text-brand-sky text-xs font-body font-bold">Motor</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-sky/10 text-brand-sky text-xs font-body font-bold">Lenguaje</span>
               </div>
-              <p class="text-xs text-brand-sky font-body font-bold mt-auto">Toca para ver más →</p>
+              <p class="text-xs text-gray-400 font-body mt-4">Toca para ver más →</p>
             </div>
-            <div class="flip-card-back bg-brand-sky rounded-2xl p-6 flex flex-col gap-3">
-              <h3 class="font-heading font-bold text-lg text-white">Estimulación Temprana</h3>
-              <p class="font-body text-sm text-white/90">Impulsamos el desarrollo de habilidades cognitivas y motoras en edades clave para sentar bases sólidas de aprendizaje.</p>
-              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
-                <li>✓ Desarrollo cognitivo</li>
-                <li>✓ Habilidades motoras</li>
-                <li>✓ Coordinación y lenguaje</li>
+            <div class="flip-card-back bg-brand-sky rounded-2xl p-6">
+              <h3 class="font-heading font-bold text-lg text-white mb-3">Estimulación Temprana</h3>
+              <p class="font-body text-sm text-white/90 mb-4">Impulsamos habilidades cognitivas y motoras en edades clave para sentar bases sólidas de aprendizaje.</p>
+              <ul class="font-body text-sm text-white/90 space-y-2">
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Desarrollo cognitivo</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Habilidades motoras</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Coordinación y lenguaje</li>
               </ul>
             </div>
           </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="flip-card group" tabindex="0">
+        <div class="flip-card" tabindex="0">
           <div class="flip-card-inner">
-            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-brand-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
               </div>
-              <div>
-                <h3 class="font-heading font-bold text-lg text-brand-dark">Asesorías Académicas</h3>
-                <p class="font-body text-sm text-gray-500 mt-1">Orientación a padres y maestros.</p>
+              <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Asesorías Académicas</h3>
+              <p class="font-body text-sm text-gray-500 mb-4">Orientación especializada a padres y maestros.</p>
+              <div class="flex gap-1 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-brand-green/10 text-brand-green text-xs font-body font-bold">Padres</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-green/10 text-brand-green text-xs font-body font-bold">Docentes</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-green/10 text-brand-green text-xs font-body font-bold">Talleres</span>
               </div>
-              <p class="text-xs text-brand-green font-body font-bold mt-auto">Toca para ver más →</p>
+              <p class="text-xs text-gray-400 font-body mt-4">Toca para ver más →</p>
             </div>
-            <div class="flip-card-back bg-brand-green rounded-2xl p-6 flex flex-col gap-3">
-              <h3 class="font-heading font-bold text-lg text-white">Asesorías Académicas</h3>
-              <p class="font-body text-sm text-white/90">Acompañamiento experto en el proceso de aprendizaje, dirigido tanto a padres como a docentes.</p>
-              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
-                <li>✓ Orientación parental</li>
-                <li>✓ Estrategias en casa</li>
-                <li>✓ Talleres para padres</li>
+            <div class="flip-card-back bg-brand-green rounded-2xl p-6">
+              <h3 class="font-heading font-bold text-lg text-white mb-3">Asesorías Académicas</h3>
+              <p class="font-body text-sm text-white/90 mb-4">Acompañamiento experto en el proceso de aprendizaje, dirigido a padres y docentes por igual.</p>
+              <ul class="font-body text-sm text-white/90 space-y-2">
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Orientación parental</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Estrategias en casa</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Talleres para padres</li>
               </ul>
             </div>
           </div>
         </div>
 
         <!-- Card 4 -->
-        <div class="flip-card group" tabindex="0">
+        <div class="flip-card" tabindex="0">
           <div class="flip-card-inner">
-            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-purple/10 flex items-center justify-center">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-brand-purple/10 flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-brand-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
               </div>
-              <div>
-                <h3 class="font-heading font-bold text-lg text-brand-dark">Atención a Discapacidad</h3>
-                <p class="font-body text-sm text-gray-500 mt-1">Apoyo especializado e inclusivo.</p>
+              <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Atención a Discapacidad</h3>
+              <p class="font-body text-sm text-gray-500 mb-4">Apoyo especializado e inclusivo para todos.</p>
+              <div class="flex gap-1 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-brand-purple/10 text-brand-purple text-xs font-body font-bold">Braille</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-purple/10 text-brand-purple text-xs font-body font-bold">LSM</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-purple/10 text-brand-purple text-xs font-body font-bold">Inclusión</span>
               </div>
-              <p class="text-xs text-brand-purple font-body font-bold mt-auto">Toca para ver más →</p>
+              <p class="text-xs text-gray-400 font-body mt-4">Toca para ver más →</p>
             </div>
-            <div class="flip-card-back bg-brand-purple rounded-2xl p-6 flex flex-col gap-3">
-              <h3 class="font-heading font-bold text-lg text-white">Atención a Discapacidad</h3>
-              <p class="font-body text-sm text-white/90">Apoyo especializado para estudiantes en situación de discapacidad, garantizando plena inclusión educativa.</p>
-              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
-                <li>✓ Clases de Braille</li>
-                <li>✓ Lengua de Señas Mexicanas</li>
-                <li>✓ Adaptaciones curriculares</li>
+            <div class="flip-card-back bg-brand-purple rounded-2xl p-6">
+              <h3 class="font-heading font-bold text-lg text-white mb-3">Atención a Discapacidad</h3>
+              <p class="font-body text-sm text-white/90 mb-4">Apoyo especializado para estudiantes en situación de discapacidad, garantizando plena inclusión educativa.</p>
+              <ul class="font-body text-sm text-white/90 space-y-2">
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Clases de Braille</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Lengua de Señas Mexicanas</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Adaptaciones curriculares</li>
               </ul>
             </div>
           </div>
         </div>
 
         <!-- Card 5 -->
-        <div class="flip-card group" tabindex="0">
+        <div class="flip-card" tabindex="0">
           <div class="flip-card-inner">
-            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-red/10 flex items-center justify-center">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-brand-red/10 flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               </div>
-              <div>
-                <h3 class="font-heading font-bold text-lg text-brand-dark">Cursos para Docentes</h3>
-                <p class="font-body text-sm text-gray-500 mt-1">Formación en metodologías inclusivas.</p>
+              <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Cursos para Docentes</h3>
+              <p class="font-body text-sm text-gray-500 mb-4">Formación en metodologías inclusivas y modernas.</p>
+              <div class="flex gap-1 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-brand-red/10 text-brand-red text-xs font-body font-bold">Online</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-red/10 text-brand-red text-xs font-body font-bold">Talleres</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-red/10 text-brand-red text-xs font-body font-bold">Gratuitos</span>
               </div>
-              <p class="text-xs text-brand-red font-body font-bold mt-auto">Toca para ver más →</p>
+              <p class="text-xs text-gray-400 font-body mt-4">Toca para ver más →</p>
             </div>
-            <div class="flip-card-back bg-brand-red rounded-2xl p-6 flex flex-col gap-3">
-              <h3 class="font-heading font-bold text-lg text-white">Cursos para Docentes</h3>
-              <p class="font-body text-sm text-white/90">Capacitación especializada para educadores en atención a la diversidad y mejores prácticas pedagógicas.</p>
-              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
-                <li>✓ Talleres especializados</li>
-                <li>✓ Clases en línea</li>
-                <li>✓ Conferencias gratuitas</li>
+            <div class="flip-card-back bg-brand-red rounded-2xl p-6">
+              <h3 class="font-heading font-bold text-lg text-white mb-3">Cursos para Docentes</h3>
+              <p class="font-body text-sm text-white/90 mb-4">Capacitación especializada en atención a la diversidad y mejores prácticas pedagógicas para educadores.</p>
+              <ul class="font-body text-sm text-white/90 space-y-2">
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Talleres especializados</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Clases en línea</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Conferencias gratuitas</li>
               </ul>
             </div>
           </div>
         </div>
 
         <!-- Card 6 -->
-        <div class="flip-card group" tabindex="0">
+        <div class="flip-card" tabindex="0">
           <div class="flip-card-inner">
-            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-dark/10 flex items-center justify-center">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-brand-dark/10 flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-brand-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
               </div>
-              <div>
-                <h3 class="font-heading font-bold text-lg text-brand-dark">Programas Inclusivos</h3>
-                <p class="font-body text-sm text-gray-500 mt-1">Diseño universal para el aprendizaje.</p>
+              <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Programas Inclusivos</h3>
+              <p class="font-body text-sm text-gray-500 mb-4">Diseño universal para el aprendizaje.</p>
+              <div class="flex gap-1 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full bg-brand-dark/10 text-brand-dark text-xs font-body font-bold">DUA</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-dark/10 text-brand-dark text-xs font-body font-bold">Innovación</span>
+                <span class="px-2 py-0.5 rounded-full bg-brand-dark/10 text-brand-dark text-xs font-body font-bold">Seguimiento</span>
               </div>
-              <p class="text-xs text-brand-dark font-body font-bold mt-auto">Toca para ver más →</p>
+              <p class="text-xs text-gray-400 font-body mt-4">Toca para ver más →</p>
             </div>
-            <div class="flip-card-back bg-brand-dark rounded-2xl p-6 flex flex-col gap-3">
-              <h3 class="font-heading font-bold text-lg text-white">Programas Inclusivos</h3>
-              <p class="font-body text-sm text-white/90">Estrategias educativas que celebran la diversidad como una fortaleza en el proceso de aprendizaje.</p>
-              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
-                <li>✓ Diseño universal</li>
-                <li>✓ Metodologías inclusivas</li>
-                <li>✓ Seguimiento continuo</li>
+            <div class="flip-card-back bg-brand-dark rounded-2xl p-6">
+              <h3 class="font-heading font-bold text-lg text-white mb-3">Programas Inclusivos</h3>
+              <p class="font-body text-sm text-white/90 mb-4">Estrategias educativas innovadoras que celebran la diversidad como una fortaleza en el aprendizaje.</p>
+              <ul class="font-body text-sm text-white/90 space-y-2">
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Diseño universal</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Metodologías inclusivas</li>
+                <li class="flex gap-2 items-start"><span class="mt-0.5">✓</span> Seguimiento continuo</li>
               </ul>
             </div>
           </div>

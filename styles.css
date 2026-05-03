@@ -1,15 +1,36 @@
 /* =====================================================
    DIVERGEN-T — styles.css
-   Solo estilos que Tailwind no puede hacer directamente:
-   - Flip cards 3D
-   - Scrollbar personalizado
-   - Navbar scroll shadow
+   Solo estilos que Tailwind no puede hacer directamente
    ===================================================== */
+
+/* --- Animaciones de iconos flotantes en hero --- */
+@keyframes float-a {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50%       { transform: translateY(-10px) rotate(2deg); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translateY(0px) rotate(2deg); }
+  50%       { transform: translateY(-14px) rotate(-2deg); }
+}
+@keyframes float-c {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes float-d {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); }
+  60%       { transform: translateY(-12px) rotate(3deg); }
+}
+
+.float-icon { animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+.float-icon-1 { animation: float-a 3.2s infinite; }
+.float-icon-2 { animation: float-b 3.8s infinite; }
+.float-icon-3 { animation: float-c 4.1s infinite; }
+.float-icon-4 { animation: float-d 3.5s infinite; }
 
 /* --- Flip Cards 3D --- */
 .flip-card {
   perspective: 1000px;
-  min-height: 200px;
+  height: 260px;   /* altura fija = ambas caras se ven completas */
   cursor: pointer;
 }
 
@@ -17,7 +38,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 200px;
   transition: transform 0.5s ease;
   transform-style: preserve-3d;
 }
@@ -34,10 +54,16 @@
   inset: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  overflow: hidden;    /* evita que el contenido se salga */
 }
 
 .flip-card-back {
   transform: rotateY(180deg);
+}
+
+/* Sombra en hover de tarjeta */
+.flip-card:hover .flip-card-front {
+  box-shadow: 0 12px 32px rgba(0, 0, 102, 0.1);
 }
 
 /* --- Navbar con sombra al hacer scroll --- */
