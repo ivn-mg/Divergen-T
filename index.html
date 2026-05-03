@@ -1,669 +1,585 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divergen-T | Centro de Atención Integral al Desarrollo Educativo</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Divergen-T es un centro especializado en atención integral al desarrollo educativo, promoviendo la inclusión, diversidad y equidad en el aprendizaje para todos.">
-    <meta name="keywords" content="desarrollo educativo, inclusión educativa, diversidad, atención integral, educación especial, México, CDMX">
-    <meta name="author" content="Divergen-T">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://divergen-t.netlify.app/">
-    <meta property="og:title" content="Divergen-T | Centro de Atención Integral al Desarrollo Educativo">
-    <meta property="og:description" content="Centro especializado en atención integral al desarrollo educativo, promoviendo la inclusión y diversidad.">
-    <meta property="og:image" content="https://divergen-t.netlify.app/og-image.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://divergen-t.netlify.app/">
-    <meta property="twitter:title" content="Divergen-T | Centro de Atención Integral al Desarrollo Educativo">
-    <meta property="twitter:description" content="Centro especializado en atención integral al desarrollo educativo, promoviendo la inclusión y diversidad.">
-    <meta property="twitter:image" content="https://divergen-t.netlify.app/og-image.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "Divergen-T",
-        "alternateName": "Centro de Atención Integral al Desarrollo Educativo",
-        "description": "Centro especializado en atención integral al desarrollo educativo, promoviendo la inclusión, diversidad y equidad en el aprendizaje.",
-        "url": "https://divergen-t.netlify.app",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Ciudad de México",
-            "@addressRegion": "CDMX",
-            "addressCountry": "MX"
-        },
-        "sameAs": [
-            "https://facebook.com/divergent-mexico",
-            "https://instagram.com/divergent_mexico"
-        ]
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divergen-T | Centro de Atención Integral al Desarrollo Educativo</title>
+  <meta name="description" content="Divergen-T es un centro especializado en atención integral al desarrollo educativo, promoviendo la inclusión, diversidad y equidad en el aprendizaje para todos.">
+  <meta name="keywords" content="desarrollo educativo, inclusión educativa, diversidad, atención integral, educación especial, México, Jilotepec, Naucalpan">
+  <meta name="author" content="Divergen-T">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://divergen-t.netlify.app/">
+  <meta property="og:title" content="Divergen-T | Centro de Atención Integral al Desarrollo Educativo">
+  <meta property="og:description" content="Centro especializado en atención integral al desarrollo educativo, promoviendo la inclusión y diversidad.">
+
+  <!-- Fonts: Atkinson Hyperlegible (brand principal) + Nunito (títulos, similar a Campton) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN con colores de marca -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange:  '#FF9900',
+              purple:  '#660066',
+              dark:    '#000066',
+              green:   '#99CC33',
+              red:     '#CC0000',
+              sky:     '#3399CC',
+            }
+          },
+          fontFamily: {
+            heading: ['Nunito', 'sans-serif'],
+            body:    ['Atkinson Hyperlegible', 'sans-serif'],
+          }
+        }
+      }
     }
-    </script>
+  </script>
+
+  <!-- CSS mínimo: solo flip-card 3D, scrollbar, y cosas que Tailwind no puede hacer -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Divergen-T",
+    "alternateName": "Centro de Atención Integral al Desarrollo Educativo",
+    "description": "Centro especializado en atención integral al desarrollo educativo.",
+    "url": "https://divergen-t.netlify.app",
+    "telephone": "+525553015570",
+    "address": { "@type": "PostalAddress", "addressLocality": "Jilotepec", "addressCountry": "MX" }
+  }
+  </script>
 </head>
 
-<body class="font-primary antialiased">
-    <!-- Loading Screen -->
-    <div id="loading" class="loading-screen">
-        <div class="loading-content">
-            <div class="logo-animation">
-                <div class="t-shape">
-                    <div class="t-horizontal"></div>
-                    <div class="t-vertical"></div>
-                </div>
-            </div>
-            <h2>Divergen-T</h2>
-            <p>Cargando...</p>
+<body class="font-body bg-white text-gray-800 antialiased">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-lg bg-brand-dark flex items-center justify-center shrink-0">
+            <span class="text-white font-heading font-black text-lg leading-none">T</span>
+          </div>
+          <div class="leading-tight">
+            <p class="font-heading font-black text-brand-dark text-base leading-none">Divergen-T</p>
+            <p class="text-[10px] text-gray-500 leading-none mt-0.5">Centro de Desarrollo Educativo</p>
+          </div>
+        </a>
+
+        <!-- Desktop links -->
+        <div class="hidden md:flex items-center gap-1">
+          <a href="#inicio"    class="nav-link px-4 py-2 rounded-lg text-sm font-body font-bold text-gray-600 hover:text-brand-dark hover:bg-gray-50 transition-colors">Inicio</a>
+          <a href="#servicios" class="nav-link px-4 py-2 rounded-lg text-sm font-body font-bold text-gray-600 hover:text-brand-dark hover:bg-gray-50 transition-colors">Servicios</a>
+          <a href="#nosotros"  class="nav-link px-4 py-2 rounded-lg text-sm font-body font-bold text-gray-600 hover:text-brand-dark hover:bg-gray-50 transition-colors">Nosotros</a>
+          <a href="#contacto"  class="ml-2 px-5 py-2 rounded-full bg-brand-orange text-white text-sm font-body font-bold hover:bg-orange-500 transition-colors">Contacto</a>
         </div>
+
+        <!-- Mobile button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Abrir menú">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path id="menu-icon-open"  stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="menu-icon-close" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" class="hidden"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gray-100 mt-1">
+        <div class="flex flex-col gap-1 pt-3">
+          <a href="#inicio"    class="mobile-nav-link px-4 py-2.5 rounded-lg font-body font-bold text-gray-700 hover:bg-gray-50">Inicio</a>
+          <a href="#servicios" class="mobile-nav-link px-4 py-2.5 rounded-lg font-body font-bold text-gray-700 hover:bg-gray-50">Servicios</a>
+          <a href="#nosotros"  class="mobile-nav-link px-4 py-2.5 rounded-lg font-body font-bold text-gray-700 hover:bg-gray-50">Nosotros</a>
+          <a href="#contacto"  class="mobile-nav-link mt-1 px-4 py-2.5 rounded-full bg-brand-orange text-white font-body font-bold text-center">Contacto</a>
+        </div>
+      </div>
     </div>
+  </nav>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <!-- Logo -->
-                <div class="logo">
-                    <div class="logo-icon">
-                        <span class="logo-text">T</span>
-                    </div>
-                    <div class="logo-info">
-                        <h1 class="logo-title">Divergen-T</h1>
-                        <p class="logo-subtitle">Centro de Desarrollo Educativo</p>
-                    </div>
-                </div>
-                
-                <!-- Navigation Links -->
-                <div class="nav-links">
-                    <a href="#inicio" class="nav-link">Inicio</a>
-                    <a href="#servicios" class="nav-link">Servicios</a>
-                    <a href="#nosotros" class="nav-link">Nosotros</a>
-                    <a href="#contacto" class="nav-link">Contacto</a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="mobile-menu-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+  <!-- ===== HERO ===== -->
+  <section id="inicio" class="pt-16 min-h-screen flex items-center bg-gradient-to-br from-white via-blue-50 to-orange-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 w-full">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Text -->
+        <div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-orange/10 rounded-full text-brand-orange text-sm font-body font-bold mb-6">
+            <span>♿</span>
+            <span>Inclusión · Diversidad · Desarrollo</span>
+          </div>
+
+          <h1 class="font-heading font-black text-4xl sm:text-5xl text-brand-dark leading-tight mb-5">
+            Centro de Atención Integral al
+            <span class="text-brand-orange"> Desarrollo Educativo</span>
+          </h1>
+
+          <p class="font-body text-gray-600 text-lg leading-relaxed mb-8">
+            Transformamos vidas a través de la educación inclusiva en Jilotepec y Naucalpan,
+            promoviendo el desarrollo integral de cada persona en un ambiente de respeto y equidad.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-10">
+            <a href="#servicios" class="px-6 py-3 rounded-full bg-brand-dark text-white font-body font-bold hover:bg-blue-900 transition-colors">
+              Conoce nuestros servicios
+            </a>
+            <a href="#contacto" class="px-6 py-3 rounded-full border-2 border-brand-dark text-brand-dark font-body font-bold hover:bg-brand-dark hover:text-white transition-colors">
+              Agenda una cita
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="flex gap-8">
+            <div>
+              <p class="font-heading font-black text-3xl text-brand-dark">500+</p>
+              <p class="font-body text-sm text-gray-500">Estudiantes</p>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="mobile-menu">
-                <div class="mobile-nav-links">
-                    <a href="#inicio" class="mobile-nav-link">Inicio</a>
-                    <a href="#servicios" class="mobile-nav-link">Servicios</a>
-                    <a href="#nosotros" class="mobile-nav-link">Nosotros</a>
-                    <a href="#contacto" class="mobile-nav-link">Contacto</a>
-                </div>
+            <div class="w-px bg-gray-200"></div>
+            <div>
+              <p class="font-heading font-black text-3xl text-brand-dark">2</p>
+              <p class="font-body text-sm text-gray-500">Centros</p>
             </div>
+            <div class="w-px bg-gray-200"></div>
+            <div>
+              <p class="font-heading font-black text-3xl text-brand-dark">100%</p>
+              <p class="font-body text-sm text-gray-500">Inclusivo</p>
+            </div>
+          </div>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-background">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
+        <!-- Visual: T shape con colores de marca -->
+        <div class="flex justify-center">
+          <div class="relative">
+            <!-- T grande estilizada -->
+            <div class="t-logo-hero relative w-64 h-72">
+              <!-- Barra horizontal -->
+              <div class="absolute top-0 left-0 right-0 h-20 rounded-2xl bg-gradient-to-r from-brand-sky via-brand-purple to-brand-orange flex items-center justify-center gap-2 overflow-hidden">
+                <span class="text-white text-3xl">♿</span>
+                <span class="text-white text-3xl">👥</span>
+                <span class="text-white text-3xl">🌟</span>
+              </div>
+              <!-- Barra vertical -->
+              <div class="absolute top-20 left-1/2 -translate-x-1/2 w-24 bottom-0 rounded-b-2xl bg-gradient-to-b from-brand-orange via-brand-red to-brand-purple flex flex-col items-center justify-center gap-3">
+                <span class="text-white text-3xl">👩‍🏫</span>
+                <span class="text-white text-3xl">🤝</span>
+              </div>
             </div>
+            <!-- Texto debajo -->
+            <p class="text-center font-heading font-black text-brand-dark text-2xl mt-4">Divergen-T</p>
+            <p class="text-center font-body text-gray-500 text-xs mt-1">Centro de Atención Integral al<br><strong>Desarrollo Educativo</strong></p>
+          </div>
         </div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <!-- Left Content -->
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <span class="accessibility-icon">♿</span>
-                        <span>Inclusión • Diversidad • Desarrollo</span>
-                    </div>
-                    
-                    <h1 class="hero-title">
-                        Centro de Atención Integral al 
-                        <span class="highlight">Desarrollo Educativo</span>
-                    </h1>
-                    
-                    <p class="hero-description">
-                        Transformamos vidas a través de la educación inclusiva en la Ciudad de México, 
-                        promoviendo el desarrollo integral de cada persona en un ambiente de respeto y equidad.
-                    </p>
-                    
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary" data-scroll="servicios">
-                            Conoce Nuestros Servicios
-                        </button>
-                        <button class="btn btn-secondary" data-scroll="contacto">
-                            Agenda una Cita
-                        </button>
-                    </div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Estudiantes</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Años</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Inclusivo</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Visual -->
-                <div class="hero-visual">
-                    <div class="visual-container">
-                        <div class="diversity-icons">
-                            <div class="icon-item icon-1">👥</div>
-                            <div class="icon-item icon-2">🎓</div>
-                            <div class="icon-item icon-3">♿</div>
-                            <div class="icon-item icon-4">🌟</div>
-                            <div class="icon-item icon-5">🤝</div>
-                            <div class="icon-item icon-6">💡</div>
-                        </div>
-                        <div class="central-logo">
-                            <div class="logo-t-shape">
-                                <div class="t-top"></div>
-                                <div class="t-stem"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <!-- ===== SERVICIOS ===== -->
+  <section id="servicios" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+      <div class="text-center mb-14">
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-brand-dark mb-4">Nuestros Servicios</h2>
+        <p class="font-body text-gray-600 max-w-2xl mx-auto text-lg">
+          Ofrecemos atención especializada e integral para el desarrollo educativo,
+          adaptándonos a las necesidades únicas de cada persona.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div class="flip-card group" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-lg text-brand-dark">Tutorías Personalizadas</h3>
+                <p class="font-body text-sm text-gray-500 mt-1">Matemáticas, español, ciencias y más.</p>
+              </div>
+              <p class="text-xs text-brand-orange font-body font-bold mt-auto">Toca para ver más →</p>
             </div>
+            <div class="flip-card-back bg-brand-orange rounded-2xl p-6 flex flex-col gap-3">
+              <h3 class="font-heading font-bold text-lg text-white">Tutorías Personalizadas</h3>
+              <p class="font-body text-sm text-white/90">Atención individualizada en las materias que tu hijo necesite, adaptándonos a su ritmo y estilo de aprendizaje.</p>
+              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
+                <li>✓ Matemáticas y ciencias</li>
+                <li>✓ Español y lectura</li>
+                <li>✓ Club de tareas diarias</li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="servicios" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Nuestros Servicios</h2>
-                <p class="section-description">
-                    Ofrecemos atención especializada e integral para el desarrollo educativo, 
-                    adaptándonos a las necesidades únicas de cada persona.
-                </p>
+        <!-- Card 2 -->
+        <div class="flip-card group" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-sky/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-sky" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-lg text-brand-dark">Estimulación Temprana</h3>
+                <p class="font-body text-sm text-gray-500 mt-1">Desarrollo cognitivo y motor desde la infancia.</p>
+              </div>
+              <p class="text-xs text-brand-sky font-body font-bold mt-auto">Toca para ver más →</p>
             </div>
-            
-            <div class="services-grid">
-                <!-- Service Card 1 -->
-                <div class="service-card" data-service="evaluacion">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon orange">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                </svg>
-                            </div>
-                            <h3 class="service-title">Evaluación Educativa</h3>
-                            <p class="service-preview">Diagnóstico integral para identificar fortalezas...</p>
-                            <span class="flip-indicator">Ver más →</span>
-                        </div>
-                        <div class="card-back">
-                            <h3 class="service-title">Evaluación Educativa</h3>
-                            <p class="service-full-description">
-                                Realizamos un diagnóstico integral y personalizado para identificar fortalezas y áreas de oportunidad 
-                                en el desarrollo educativo y personal, utilizando herramientas especializadas y metodologías inclusivas.
-                            </p>
-                            <ul class="service-features">
-                                <li>Evaluación psicopedagógica</li>
-                                <li>Diagnóstico de necesidades</li>
-                                <li>Plan de intervención personalizado</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Service Card 2 -->
-                <div class="service-card" data-service="terapia">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon blue">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                                </svg>
-                            </div>
-                            <h3 class="service-title">Terapia Personalizada</h3>
-                            <p class="service-preview">Intervenciones terapéuticas adaptadas...</p>
-                            <span class="flip-indicator">Ver más →</span>
-                        </div>
-                        <div class="card-back">
-                            <h3 class="service-title">Terapia Personalizada</h3>
-                            <p class="service-full-description">
-                                Diseñamos intervenciones terapéuticas específicamente adaptadas a las necesidades de cada estudiante, 
-                                promoviendo su desarrollo óptimo a través de técnicas innovadoras y evidencia científica.
-                            </p>
-                            <ul class="service-features">
-                                <li>Terapia de lenguaje</li>
-                                <li>Terapia ocupacional</li>
-                                <li>Apoyo psicológico</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Service Card 3 -->
-                <div class="service-card" data-service="asesoria">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                                </svg>
-                            </div>
-                            <h3 class="service-title">Asesoría Familiar</h3>
-                            <p class="service-preview">Orientación y apoyo a las familias...</p>
-                            <span class="flip-indicator">Ver más →</span>
-                        </div>
-                        <div class="card-back">
-                            <h3 class="service-title">Asesoría Familiar</h3>
-                            <p class="service-full-description">
-                                Brindamos orientación especializada y apoyo continuo a las familias para crear ambientes 
-                                favorables para el aprendizaje en el hogar y fortalecer los vínculos familiares.
-                            </p>
-                            <ul class="service-features">
-                                <li>Orientación parental</li>
-                                <li>Estrategias familiares</li>
-                                <li>Talleres para padres</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Service Card 4 -->
-                <div class="service-card" data-service="programas">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon purple">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                                </svg>
-                            </div>
-                            <h3 class="service-title">Programas Inclusivos</h3>
-                            <p class="service-preview">Estrategias que promueven la inclusión...</p>
-                            <span class="flip-indicator">Ver más →</span>
-                        </div>
-                        <div class="card-back">
-                            <h3 class="service-title">Programas Inclusivos</h3>
-                            <p class="service-full-description">
-                                Desarrollamos estrategias y programas educativos innovadores que promueven la inclusión 
-                                y celebran la diversidad como una fortaleza en el proceso de aprendizaje.
-                            </p>
-                            <ul class="service-features">
-                                <li>Diseño universal para el aprendizaje</li>
-                                <li>Metodologías inclusivas</li>
-                                <li>Adaptaciones curriculares</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Service Card 5 -->
-                <div class="service-card" data-service="capacitacion">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon red">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                </svg>
-                            </div>
-                            <h3 class="service-title">Capacitación Docente</h3>
-                            <p class="service-preview">Formación especializada para educadores...</p>
-                            <span class="flip-indicator">Ver más →</span>
-                        </div>
-                        <div class="card-back">
-                            <h3 class="service-title">Capacitación Docente</h3>
-                            <p class="service-full-description">
-                                Ofrecemos formación especializada y actualizada para educadores en metodologías inclusivas, 
-                                atención a la diversidad y mejores prácticas pedagógicas.
-                            </p>
-                            <ul class="service-features">
-                                <li>Talleres especializados</li>
-                                <li>Certificaciones</li>
-                                <li>Seguimiento continuo</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Service Card 6 -->
-                <div class="service-card" data-service="seguimiento">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="service-icon light-blue">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                                </svg>
-                            </div>
-                            <h3 class="service-title">Seguimiento Integral</h3>
-                            <p class="service-preview">Acompañamiento continuo en el proceso...</p>
-                            <span class="flip-indicator">Ver más →</span>
-                        </div>
-                        <div class="card-back">
-                            <h3 class="service-title">Seguimiento Integral</h3>
-                            <p class="service-full-description">
-                                Proporcionamos acompañamiento continuo y personalizado en todo el proceso de desarrollo educativo 
-                                para asegurar el progreso sostenido y duradero.
-                            </p>
-                            <ul class="service-features">
-                                <li>Monitoreo del progreso</li>
-                                <li>Ajustes de intervención</li>
-                                <li>Evaluación continua</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="flip-card-back bg-brand-sky rounded-2xl p-6 flex flex-col gap-3">
+              <h3 class="font-heading font-bold text-lg text-white">Estimulación Temprana</h3>
+              <p class="font-body text-sm text-white/90">Impulsamos el desarrollo de habilidades cognitivas y motoras en edades clave para sentar bases sólidas de aprendizaje.</p>
+              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
+                <li>✓ Desarrollo cognitivo</li>
+                <li>✓ Habilidades motoras</li>
+                <li>✓ Coordinación y lenguaje</li>
+              </ul>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="nosotros" class="about">
-        <div class="container">
-            <div class="about-content">
-                <!-- Content -->
-                <div class="about-text">
-                    <h2 class="section-title">Sobre Divergen-T</h2>
-                    <p class="about-description">
-                        Somos un centro especializado en atención integral al desarrollo educativo ubicado en la Ciudad de México, 
-                        comprometidos con la inclusión, diversidad y equidad en el aprendizaje. 
-                        Nuestro enfoque holístico considera las necesidades únicas de cada persona.
-                    </p>
-                    <p class="about-description">
-                        Creemos en el potencial de cada individuo y trabajamos para crear ambientes 
-                        educativos que promuevan el desarrollo pleno de sus capacidades, respetando 
-                        y celebrando la diversidad como una fortaleza.
-                    </p>
-                    
-                    <!-- Values -->
-                    <div class="values-grid">
-                        <div class="value-item">
-                            <div class="value-icon orange">✓</div>
-                            <div class="value-content">
-                                <h4 class="value-title">Inclusión</h4>
-                                <p class="value-description">Atención para todas las personas, sin distinción</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-item">
-                            <div class="value-icon green">✓</div>
-                            <div class="value-content">
-                                <h4 class="value-title">Diversidad</h4>
-                                <p class="value-description">Celebramos las diferencias como fortalezas</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-item">
-                            <div class="value-icon blue">✓</div>
-                            <div class="value-content">
-                                <h4 class="value-title">Desarrollo Integral</h4>
-                                <p class="value-description">Atención holística del crecimiento personal</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-item">
-                            <div class="value-icon purple">✓</div>
-                            <div class="value-content">
-                                <h4 class="value-title">Excelencia</h4>
-                                <p class="value-description">Compromiso con la calidad educativa</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Stats Visual -->
-                <div class="about-visual">
-                    <div class="stats-container">
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <div class="stat-number">500+</div>
-                                <div class="stat-label">Estudiantes Atendidos</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">15+</div>
-                                <div class="stat-label">Años de Experiencia</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">50+</div>
-                                <div class="stat-label">Familias Asesoradas</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">100%</div>
-                                <div class="stat-label">Compromiso Inclusivo</div>
-                            </div>
-                        </div>
-                        
-                        <div class="impact-text">
-                            <h3>Nuestro Impacto</h3>
-                            <p>Transformando vidas a través de la educación inclusiva y el desarrollo integral en la CDMX.</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- Card 3 -->
+        <div class="flip-card group" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-lg text-brand-dark">Asesorías Académicas</h3>
+                <p class="font-body text-sm text-gray-500 mt-1">Orientación a padres y maestros.</p>
+              </div>
+              <p class="text-xs text-brand-green font-body font-bold mt-auto">Toca para ver más →</p>
             </div>
+            <div class="flip-card-back bg-brand-green rounded-2xl p-6 flex flex-col gap-3">
+              <h3 class="font-heading font-bold text-lg text-white">Asesorías Académicas</h3>
+              <p class="font-body text-sm text-white/90">Acompañamiento experto en el proceso de aprendizaje, dirigido tanto a padres como a docentes.</p>
+              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
+                <li>✓ Orientación parental</li>
+                <li>✓ Estrategias en casa</li>
+                <li>✓ Talleres para padres</li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title white">Contáctanos</h2>
-                <p class="section-description white">
-                    Estamos aquí para apoyarte en el desarrollo educativo. 
-                    Agenda una cita o solicita más información sobre nuestros servicios.
-                </p>
+        <!-- Card 4 -->
+        <div class="flip-card group" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-purple/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-lg text-brand-dark">Atención a Discapacidad</h3>
+                <p class="font-body text-sm text-gray-500 mt-1">Apoyo especializado e inclusivo.</p>
+              </div>
+              <p class="text-xs text-brand-purple font-body font-bold mt-auto">Toca para ver más →</p>
             </div>
-            
-            <div class="contact-content">
-                <!-- Contact Form -->
-                <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="nombre">Nombre Completo</label>
-                                <input type="text" id="nombre" name="nombre" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Correo Electrónico</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="servicio">Servicio de Interés</label>
-                            <select id="servicio" name="servicio">
-                                <option value="">Selecciona un servicio</option>
-                                <option value="evaluacion">Evaluación Educativa</option>
-                                <option value="terapia">Terapia Personalizada</option>
-                                <option value="asesoria">Asesoría Familiar</option>
-                                <option value="programas">Programas Inclusivos</option>
-                                <option value="capacitacion">Capacitación Docente</option>
-                                <option value="seguimiento">Seguimiento Integral</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary full-width">
-                            Enviar Mensaje
-                        </button>
-                    </form>
-                </div>
-                
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <h3 class="contact-info-title">Información de Contacto</h3>
-                    
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <div class="contact-icon orange">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-content">
-                                <h4>Ubicación</h4>
-                                <p>Ciudad de México, CDMX, México</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon blue">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-content">
-                                <h4>Teléfono</h4>
-                                <p>(55) 1234-5678</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-content">
-                                <h4>Email</h4>
-                                <p>contacto@divergen-t.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon purple">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-content">
-                                <h4>Horarios</h4>
-                                <p>Lun - Vie: 8:00 AM - 6:00 PM<br>Sáb: 9:00 AM - 2:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- CTA -->
-                    <div class="cta-card">
-                        <h4>¿Necesitas ayuda inmediata?</h4>
-                        <p>Agenda una consulta inicial gratuita para conocer cómo podemos apoyarte.</p>
-                        <button class="btn btn-white">Agendar Consulta</button>
-                    </div>
-                </div>
+            <div class="flip-card-back bg-brand-purple rounded-2xl p-6 flex flex-col gap-3">
+              <h3 class="font-heading font-bold text-lg text-white">Atención a Discapacidad</h3>
+              <p class="font-body text-sm text-white/90">Apoyo especializado para estudiantes en situación de discapacidad, garantizando plena inclusión educativa.</p>
+              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
+                <li>✓ Clases de Braille</li>
+                <li>✓ Lengua de Señas Mexicanas</li>
+                <li>✓ Adaptaciones curriculares</li>
+              </ul>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <!-- Logo and Description -->
-                <div class="footer-main">
-                    <div class="footer-logo">
-                        <div class="logo-icon">
-                            <span class="logo-text">T</span>
-                        </div>
-                        <div class="logo-info">
-                            <h3>Divergen-T</h3>
-                            <p>Centro de Desarrollo Educativo</p>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Transformamos vidas a través de la educación inclusiva, promoviendo el desarrollo 
-                        integral de cada persona en un ambiente de respeto, diversidad y equidad.
-                    </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.624 0 11.99-5.367 11.99-11.989C24.007 5.367 18.641.001 12.017.001z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Quick Links -->
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul class="footer-links">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#nosotros">Nosotros</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Services -->
-                <div class="footer-section">
-                    <h4>Servicios</h4>
-                    <ul class="footer-links">
-                        <li><a href="#servicios">Evaluación Educativa</a></li>
-                        <li><a href="#servicios">Terapia Personalizada</a></li>
-                        <li><a href="#servicios">Asesoría Familiar</a></li>
-                        <li><a href="#servicios">Programas Inclusivos</a></li>
-                    </ul>
-                </div>
+        <!-- Card 5 -->
+        <div class="flip-card group" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-red/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-lg text-brand-dark">Cursos para Docentes</h3>
+                <p class="font-body text-sm text-gray-500 mt-1">Formación en metodologías inclusivas.</p>
+              </div>
+              <p class="text-xs text-brand-red font-body font-bold mt-auto">Toca para ver más →</p>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Divergen-T. Todos los derechos reservados. | Diseñado con ❤️ para la inclusión educativa.</p>
+            <div class="flip-card-back bg-brand-red rounded-2xl p-6 flex flex-col gap-3">
+              <h3 class="font-heading font-bold text-lg text-white">Cursos para Docentes</h3>
+              <p class="font-body text-sm text-white/90">Capacitación especializada para educadores en atención a la diversidad y mejores prácticas pedagógicas.</p>
+              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
+                <li>✓ Talleres especializados</li>
+                <li>✓ Clases en línea</li>
+                <li>✓ Conferencias gratuitas</li>
+              </ul>
             </div>
+          </div>
         </div>
-    </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
-        </svg>
-    </button>
+        <!-- Card 6 -->
+        <div class="flip-card group" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-dark/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-lg text-brand-dark">Programas Inclusivos</h3>
+                <p class="font-body text-sm text-gray-500 mt-1">Diseño universal para el aprendizaje.</p>
+              </div>
+              <p class="text-xs text-brand-dark font-body font-bold mt-auto">Toca para ver más →</p>
+            </div>
+            <div class="flip-card-back bg-brand-dark rounded-2xl p-6 flex flex-col gap-3">
+              <h3 class="font-heading font-bold text-lg text-white">Programas Inclusivos</h3>
+              <p class="font-body text-sm text-white/90">Estrategias educativas que celebran la diversidad como una fortaleza en el proceso de aprendizaje.</p>
+              <ul class="font-body text-sm text-white/90 space-y-1 mt-auto">
+                <li>✓ Diseño universal</li>
+                <li>✓ Metodologías inclusivas</li>
+                <li>✓ Seguimiento continuo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE NOSOTROS ===== -->
+  <section id="nosotros" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Valores -->
+        <div>
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-brand-dark mb-5">¿Por qué elegir Divergen-T?</h2>
+          <p class="font-body text-gray-600 text-lg leading-relaxed mb-8">
+            Somos un espacio donde cada alumno encuentra el apoyo que necesita para alcanzar su máximo potencial.
+            Ofrecemos servicios especializados en dificultades de aprendizaje, trastornos de atención y del sonido del habla.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="flex gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+              <div class="w-9 h-9 rounded-lg bg-brand-orange flex items-center justify-center shrink-0 mt-0.5">
+                <span class="text-white text-sm font-bold">✓</span>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-brand-dark">Inclusión</h4>
+                <p class="font-body text-sm text-gray-500">Atención para todas las personas, sin distinción</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+              <div class="w-9 h-9 rounded-lg bg-brand-green flex items-center justify-center shrink-0 mt-0.5">
+                <span class="text-white text-sm font-bold">✓</span>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-brand-dark">Diversidad</h4>
+                <p class="font-body text-sm text-gray-500">Celebramos las diferencias como fortalezas</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+              <div class="w-9 h-9 rounded-lg bg-brand-sky flex items-center justify-center shrink-0 mt-0.5">
+                <span class="text-white text-sm font-bold">✓</span>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-brand-dark">Enfoque Personalizado</h4>
+                <p class="font-body text-sm text-gray-500">Adaptado a las necesidades de cada alumno</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+              <div class="w-9 h-9 rounded-lg bg-brand-purple flex items-center justify-center shrink-0 mt-0.5">
+                <span class="text-white text-sm font-bold">✓</span>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-brand-dark">Excelencia</h4>
+                <p class="font-body text-sm text-gray-500">Compromiso con la calidad educativa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="bg-brand-dark rounded-3xl p-8 text-white">
+          <h3 class="font-heading font-black text-2xl mb-6">Nuestro Impacto</h3>
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="bg-white/10 rounded-2xl p-5">
+              <p class="font-heading font-black text-4xl text-brand-orange">500+</p>
+              <p class="font-body text-white/70 text-sm mt-1">Estudiantes atendidos</p>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-5">
+              <p class="font-heading font-black text-4xl text-brand-orange">2</p>
+              <p class="font-body text-white/70 text-sm mt-1">Centros: Jilotepec y Naucalpan</p>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-5">
+              <p class="font-heading font-black text-4xl text-brand-orange">100%</p>
+              <p class="font-body text-white/70 text-sm mt-1">Compromiso inclusivo</p>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-5">
+              <p class="font-heading font-black text-4xl text-brand-orange">∞</p>
+              <p class="font-body text-white/70 text-sm mt-1">Posibilidades de desarrollo</p>
+            </div>
+          </div>
+          <p class="font-body text-white/70 text-sm">
+            Transformando vidas a través de la educación inclusiva y el desarrollo integral.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section id="contacto" class="py-24 bg-brand-dark">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+      <div class="text-center mb-14">
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-white mb-4">Contáctanos</h2>
+        <p class="font-body text-white/70 max-w-xl mx-auto text-lg">
+          Estamos aquí para apoyarte. Agenda una cita o solicita más información sobre nuestros servicios.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-10">
+
+        <!-- Formulario -->
+        <div class="lg:col-span-3 bg-white rounded-3xl p-8">
+          <h3 class="font-heading font-bold text-brand-dark text-xl mb-6">Envíanos un mensaje</h3>
+          <form id="contact-form" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="nombre" class="block font-body text-sm font-bold text-gray-700 mb-1.5">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required
+                  class="w-full px-4 py-2.5 rounded-xl border border-gray-200 font-body text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange/40 focus:border-brand-orange transition-colors">
+              </div>
+              <div>
+                <label for="email" class="block font-body text-sm font-bold text-gray-700 mb-1.5">Correo electrónico</label>
+                <input type="email" id="email" name="email" required
+                  class="w-full px-4 py-2.5 rounded-xl border border-gray-200 font-body text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange/40 focus:border-brand-orange transition-colors">
+              </div>
+            </div>
+
+            <div>
+              <label for="telefono" class="block font-body text-sm font-bold text-gray-700 mb-1.5">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 font-body text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange/40 focus:border-brand-orange transition-colors">
+            </div>
+
+            <div>
+              <label for="servicio" class="block font-body text-sm font-bold text-gray-700 mb-1.5">Servicio de interés</label>
+              <select id="servicio" name="servicio"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 font-body text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange/40 focus:border-brand-orange transition-colors bg-white">
+                <option value="">Selecciona un servicio</option>
+                <option value="tutorias">Tutorías personalizadas</option>
+                <option value="estimulacion">Estimulación temprana</option>
+                <option value="asesorias">Asesorías académicas</option>
+                <option value="discapacidad">Atención a discapacidad</option>
+                <option value="docentes">Cursos para docentes</option>
+                <option value="braille">Clases de Braille / LSM</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="mensaje" class="block font-body text-sm font-bold text-gray-700 mb-1.5">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 font-body text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange/40 focus:border-brand-orange transition-colors resize-none"></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full py-3 rounded-xl bg-brand-orange text-white font-body font-bold hover:bg-orange-500 transition-colors">
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
+
+        <!-- Info de contacto -->
+        <div class="lg:col-span-2 flex flex-col gap-4">
+
+          <div class="flex gap-4 items-start bg-white/10 rounded-2xl p-5">
+            <div class="w-10 h-10 rounded-xl bg-brand-orange flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-heading font-bold text-white">WhatsApp</h4>
+              <a href="https://wa.me/525553015570" class="font-body text-white/70 text-sm hover:text-brand-orange transition-colors">55 53 01 55 70</a>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-start bg-white/10 rounded-2xl p-5">
+            <div class="w-10 h-10 rounded-xl bg-brand-sky flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-heading font-bold text-white">Nuestros centros</h4>
+              <p class="font-body text-white/70 text-sm">Jilotepec y Naucalpan, México</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-start bg-white/10 rounded-2xl p-5">
+            <div class="w-10 h-10 rounded-xl bg-brand-green flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-heading font-bold text-white">Horarios</h4>
+              <p class="font-body text-white/70 text-sm">Lun – Vie: 8:00 AM – 6:00 PM<br>Sáb: 9:00 AM – 2:00 PM</p>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="bg-white/10 rounded-2xl p-5">
+            <h4 class="font-heading font-bold text-white mb-3">Síguenos</h4>
+            <div class="flex gap-3">
+              <a href="https://instagram.com/diverget" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-white/10 text-white font-body text-sm hover:bg-brand-orange/20 transition-colors">
+                @diverget
+              </a>
+              <a href="https://tiktok.com/@divergen86" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-white/10 text-white font-body text-sm hover:bg-brand-orange/20 transition-colors">
+                @divergen86
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-gray-950 py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-brand-orange flex items-center justify-center">
+            <span class="text-white font-heading font-black text-sm">T</span>
+          </div>
+          <p class="font-heading font-black text-white">Divergen-T</p>
+        </div>
+        <p class="font-body text-gray-500 text-sm text-center">
+          © 2025 Divergen-T. Todos los derechos reservados. Diseñado con ❤️ para la inclusión educativa.
+        </p>
+        <div class="flex gap-4">
+          <a href="#inicio"    class="font-body text-sm text-gray-500 hover:text-brand-orange transition-colors">Inicio</a>
+          <a href="#servicios" class="font-body text-sm text-gray-500 hover:text-brand-orange transition-colors">Servicios</a>
+          <a href="#contacto"  class="font-body text-sm text-gray-500 hover:text-brand-orange transition-colors">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-brand-orange text-white shadow-lg opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center hover:bg-orange-500" aria-label="Volver arriba">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>
