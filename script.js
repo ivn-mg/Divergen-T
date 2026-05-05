@@ -168,10 +168,16 @@ form?.addEventListener('submit', async e => {
   submitBtn.textContent = currentLang === 'es' ? 'Enviando…' : 'Sending…';
 
   try {
-    // sendForm lee los name="" del HTML directamente → no hay desajuste de variables
-    // Los campos del form (nombre, email, telefono, servicio, mensaje)
-    // coinciden exactamente con los {{variables}} del template
-    await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      from_name:  data.nombre,
+      name:       data.nombre,
+      from_email: data.email,
+      email:      data.email,
+      phone:      data.telefono || '—',
+      service:    data.servicio || '—',
+      message:    data.mensaje,
+      title:      `Mensaje de ${data.nombre}`,
+    });
 
     showToast(currentLang === 'es'
       ? '¡Mensaje enviado! Nos pondremos en contacto pronto.'
